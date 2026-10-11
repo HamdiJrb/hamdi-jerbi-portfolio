@@ -1,0 +1,136 @@
+{
+  "personal": {
+    "name": "Hamdi Jerbi",
+    "title": "Software Engineer & UI/UX Specialist",
+    "email": "h.jerbi78@gmail.com",
+    "location": "Nabeul, Tunisia",
+    "phone": "+216 99 782 500",
+    "avatar": "/images/about/profile_picture.png",
+    "availability": "Available for new opportunities & freelance projects",
+    "social": {
+      "github": "https://github.com/HamdiJrb",
+      "linkedin": "https://www.linkedin.com/in/hamdi-jerbi-375349251/",
+      "behance": "https://www.behance.net/hamdijrb",
+      "instagram": "https://www.instagram.com/hamdi_jrb/"
+    }
+  },
+  "summary": "A hybrid thinker, half engineer, half designer. With over 2 years of professional experience and 20+ UI/UX projects delivered. I craft beautiful and purposeful digital experiences by blending development logic with the emotion, aesthetics, and storytelling of design.",
+  "stats": [
+    { "label": "Professional Experience", "value": "2+", "suffix": "Years" },
+    { "label": "UI/UX Projects Delivered", "value": "20+", "suffix": "Projects" },
+    { "label": "Frontend & Mobile Apps", "value": "8+", "suffix": "Apps" },
+    { "label": "Client & User Satisfaction", "value": "100%", "suffix": "Rating" }
+  ],
+  "skills": {
+    "uxUiDesign": {
+      "category": "UX/UI Design",
+      "icon": "Palette",
+      "description": "User-centered design methodologies from research through high-fidelity design systems.",
+      "items": [
+        "User Research",
+        "Wireframing",
+        "Prototyping",
+        "User Personas",
+        "Design Systems",
+        "Usability Testing",
+        "A/B Testing",
+        "Accessibility Design"
+      ]
+    },
+    "designTools": {
+      "category": "Design Tools",
+      "icon": "Figma",
+      "description": "Industry-standard creative applications for vector creation, UI layout, and media production.",
+      "items": [
+        "Figma",
+        "Sketch",
+        "Adobe Illustrator",
+        "Adobe Photoshop"
+      ]
+    },
+    "frontendDev": {
+      "category": "Frontend Development",
+      "icon": "Layout",
+      "description": "Modern cross-platform and web frontend frameworks with clean, responsive architecture.",
+      "items": [
+        "Flutter",
+        "Dart",
+        "Kotlin",
+        "React",
+        "HTML5",
+        "CSS3",
+        "JavaScript"
+      ]
+    },
+    "backendDev": {
+      "category": "Backend Development",
+      "icon": "Server",
+      "description": "Robust server-side logic, enterprise architectures, and performant REST APIs.",
+      "items": [
+        "Java",
+        "Spring Boot",
+        "Node.js",
+        "Python",
+        "C#"
+      ]
+    },
+    "toolsPractices": {
+      "category": "Tools & Practices",
+      "icon": "GitBranch",
+      "description": "Version control, automated pipelines, collaborative workflows, and API architectures.",
+      "items": [
+        "Git",
+        "CI/CD",
+        "DevOps",
+        "RESTful APIs",
+        "Agile Methodologies"
+      ]
+    }
+  },
+  "experience": [
+    {
+      "id": "rayqube",
+      "company": "Rayqube Future Tech",
+      "role": "UI/UX Designer",
+      "duration": "09/2025 – Present",
+      "location": "Dubai, UAE · Remote",
+      "description": "Lead UX/UI designer crafting immersive experiences for interactive touchscreens, brand activations, and large-scale experiential installations.",
+      "responsibilities": [
+        "Design immersive UI/UX experiences for brand activations, interactive touchscreens, and event-based installations",
+        "Translate brand strategy into intuitive, engaging interfaces that enhance audience interaction",
+        "Create wireframes, high-fidelity designs, and interactive prototypes using Figma",
+        "Produce visual assets and interface elements using Adobe Illustrator",
+        "Collaborate with multidisciplinary teams to deliver future-ready experiential solutions"
+      ],
+      "technologies": ["Figma", "Adobe Illustrator", "Interactive Design", "Design Systems", "Touchscreen UI"]
+    },
+    {
+      "id": "softparadigm",
+      "company": "SOFTParadigm",
+      "role": "Mobile Developer (UI/UX-Focused)",
+      "duration": "02/2024 – 09/2025",
+      "location": "Tunis, Tunisia · On-site",
+      "description": "Built user-centered mobile applications in Flutter with strict attention to micro-interactions, responsive ergonomics, and high visual polish.",
+      "responsibilities": [
+        "Design and implement user-centered mobile interfaces with a strong focus on usability, visual consistency, and interaction design",
+        "Translate UI/UX designs and wireframes into polished, responsive Flutter interfaces",
+        "Collaborate closely with product teams to align technical implementation with user experience goals"
+      ],
+      "technologies": ["Flutter", "Dart", "Figma", "UI/UX Design", "REST APIs", "State Management"]
+    },
+    {
+      "id": "rosamedia",
+      "company": "Rosa Media",
+      "role": "Video Editor",
+      "duration": "08/2023 – 08/2024",
+      "location": "Munich, Germany · Remote",
+      "description": "Produced high-impact creative video edits and visual storytelling assets in a fully remote production environment.",
+      "responsibilities": [
+        "Mastered Adobe Premiere Pro for editing and post-production in a fully remote role during studies",
+        "Utilized Trello to streamline workflows and ensure timely project delivery"
+      ],
+      "technologies": ["Adobe Premiere Pro", "Visual Storytelling", "Trello", "Post-Production"]
+    }
+  ]
+}
+

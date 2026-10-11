@@ -1,0 +1,253 @@
+[
+  {
+    "id": "dubai-comcity",
+    "title": "Dubai ComCity Event Activations",
+    "role": "UI/UX Designer & Full-Stack Developer",
+    "duration": "10/2025 – 12/2025",
+    "category": "UI/UX Design",
+    "shortDescription": "Designed complete UI/UX flows for interactive activation games in Figma, focusing on engagement, clarity, and intuitive navigation for event attendees.",
+    "longDescription": "I led the design of an immersive interactive gaming experience for Dubai ComCity's event activations. This project required designing engaging user flows for multiple games, creating intuitive interfaces that worked seamlessly on touchscreen displays, and developing polished visual assets. I collaborated closely with the Unity team to ensure designs translated perfectly into functional gameplay. Additionally, I produced billboard graphics and large-format visuals for event environments, while building reusable design systems and component libraries to enable faster iteration and consistent styling across all touchpoints.",
+    "technologies": ["Figma", "Adobe Illustrator", "Unity", "Interactive Design", "Design Systems"],
+    "keyFeatures": [
+      "Complete UI/UX flows for 5+ interactive games",
+      "Reusable design systems and component libraries",
+      "Intuitive navigation for diverse audiences",
+      "Large-format visual assets for event environments",
+      "Seamless integration with Unity gameplay"
+    ],
+    "images": {
+      "thumbnail": "/images/projects/comcity_thumbnail.png",
+      "hero": "/images/projects/comcity_thumbnail.png",
+      "gallery": [
+        "/images/projects/comcity_screen1.png",
+        "/images/projects/comcity_screen2.png",
+        "/images/projects/comcity_screen3.png",
+        "/images/projects/comcity_screen4.png",
+        "/images/projects/comcity_screen5.png"
+      ]
+    },
+    "links": {
+      "liveDemo": "https://com-city.com",
+      "github": "https://github.com/hamdi-jerbi/com-city",
+      "caseStudy": "https://hamdi-jerbi.com/case-study/com-city"
+    }
+  },
+  {
+    "id": "ai-trade-detective",
+    "title": "DP World Quiz Activation",
+    "role": "UI/UX Designer & Frontend Developer",
+    "duration": "08/2025 – 10/2025",
+    "category": "UI/UX Design",
+    "shortDescription": "Redesigned a legacy e-commerce platform with modern UI/UX principles, improving conversion rates and user engagement through streamlined checkout flows and intuitive product discovery.",
+    "longDescription": "I led a comprehensive redesign of an established e-commerce platform, translating user research findings into actionable design improvements. The project involved creating modern, responsive interfaces that elevated the user experience while maintaining backend compatibility. I designed intuitive product discovery flows, simplified the checkout process, and implemented a dynamic filtering system. The redesign resulted in a 35% increase in conversion rates and significant improvement in user satisfaction metrics. I also built reusable component libraries in React to ensure consistent styling and accelerate development cycles.",
+    "technologies": ["React", "Tailwind CSS", "Figma", "Node.js", "REST APIs"],
+    "keyFeatures": [
+      "Responsive product catalog with advanced filtering",
+      "Streamlined multi-step checkout flow",
+      "User-centered product discovery interface",
+      "Dynamic recommendation engine UI",
+      "Accessible form design"
+    ],
+    "images": {
+      "thumbnail": "/images/projects/ai_trade_detective_thumbnail.png",
+      "hero": "/images/projects/ai_trade_detective_thumbnail.png",
+      "gallery": [
+        "/images/projects/ecommerce_platform_screen2.png",
+        "/images/projects/ecommerce_platform_screen3.png",
+        "/images/projects/ecommerce_platform_screen4.png"
+      ]
+    },
+    "links": {
+      "liveDemo": "https://ecommerce-redesign.com",
+      "github": "https://github.com/hamdi-jerbi/ecommerce-redesign",
+      "caseStudy": "https://hamdi-jerbi.com/case-study/ecommerce"
+    }
+  },
+  {
+    "id": "create-agent-id",
+    "title": "DP World Photobooth Activation",
+    "role": "UI/UX Specialist & Mobile Developer",
+    "duration": "05/2025 – 08/2025",
+    "category": "UI/UX Design",
+    "shortDescription": "Designed and developed a comprehensive design system for a mobile banking application, ensuring consistency, accessibility, and delightful user experiences across all financial features.",
+    "longDescription": "I architected a complete design system for a fintech mobile application, encompassing 100+ components across dark and light modes. This involved extensive user research with banking customers, creating detailed user personas, and designing interfaces that balance security requirements with intuitive usability. The design system included guidelines for form validation, transaction confirmations, and error messaging. I implemented this system in Flutter, ensuring pixel-perfect adherence to designs while optimizing performance on diverse devices. The system improved development velocity by 40% and ensured consistent branding across all touchpoints.",
+    "technologies": ["Flutter", "Dart", "Figma", "Design Systems", "Mobile Development"],
+    "keyFeatures": [
+      "100+ reusable UI components",
+      "Dark mode & light mode themes",
+      "Accessible banking interfaces",
+      "Transaction flow optimization",
+      "Security-first design patterns"
+    ],
+    "images": {
+      "thumbnail": "/images/projects/create_agent_id_thumbnail.png",
+      "hero": "/images/projects/create_agent_id_thumbnail.png",
+      "gallery": [
+        "/images/projects/mobile_banking_screen2.png",
+        "/images/projects/mobile_banking_screen3.png",
+        "/images/projects/mobile_banking_screen4.png"
+      ]
+    },
+    "links": {
+      "liveDemo": "https://banking-app-demo.com",
+      "github": "https://github.com/hamdi-jerbi/mobile-banking-ui",
+      "caseStudy": "https://hamdi-jerbi.com/case-study/banking-app"
+    }
+  },
+  {
+    "id": "saas-dashboard",
+    "title": "SaaS Dashboard - Data Visualization Interface",
+    "role": "Full-Stack Developer & UI Designer",
+    "duration": "02/2025 – 05/2025",
+    "category": "Frontend Development",
+    "shortDescription": "Developed an interactive SaaS dashboard with custom data visualization components, enabling businesses to monitor KPIs and make data-driven decisions intuitively.",
+    "longDescription": "I led the frontend and design of a comprehensive analytics dashboard for a B2B SaaS platform. This project required designing intuitive data visualization interfaces, creating custom React components for real-time data updates, and implementing smooth animations that make complex data accessible. I collaborated with backend engineers to optimize API calls and ensure responsive performance. The dashboard featured customizable widgets, export functionality, and role-based access controls. The interface design prioritized clarity and readability, making complex metrics understandable to users with varying technical expertise. The project improved user engagement metrics by 50% and received industry recognition for its design excellence.",
+    "technologies": ["React", "Node.js", "D3.js", "Chart.js", "Tailwind CSS", "MongoDB"],
+    "keyFeatures": [
+      "Real-time data visualization",
+      "Customizable dashboard widgets",
+      "Advanced filtering and drill-down capabilities",
+      "Automated report generation",
+      "Role-based access control"
+    ],
+    "images": {
+      "thumbnail": "/images/projects/saas_dashboard_thumbnail.png",
+      "hero": "/images/projects/saas_dashboard_screen1.png",
+      "gallery": [
+        "/images/projects/saas_dashboard_screen2.png",
+        "/images/projects/saas_dashboard_screen3.png",
+        "/images/projects/saas_dashboard_screen4.png"
+      ]
+    },
+    "links": {
+      "liveDemo": "https://saas-dashboard-demo.com",
+      "github": "https://github.com/hamdi-jerbi/saas-dashboard",
+      "caseStudy": "https://hamdi-jerbi.com/case-study/saas-dashboard"
+    }
+  },
+  {
+    "id": "social-media-platform",
+    "title": "Social Media Management Platform",
+    "role": "UI/UX Designer & Full-Stack Developer",
+    "duration": "11/2024 – 02/2025",
+    "category": "Frontend Development",
+    "shortDescription": "Built a comprehensive social media management tool enabling users to schedule posts, analyze engagement, and manage multiple accounts from a unified interface.",
+    "longDescription": "I designed and developed a full-featured social media management platform that simplified multi-channel content management. The project involved creating intuitive interfaces for content scheduling, analytics visualization, and team collaboration features. I conducted extensive user research with social media managers to understand pain points and design solutions that directly addressed their workflows. The platform supported cross-posting to multiple networks, real-time engagement analytics, and automated reporting. I implemented a responsive design that worked seamlessly across desktop and tablet devices, and created a design system that allowed for rapid feature expansion. The platform attracted 5,000+ users within the first three months.",
+    "technologies": ["React", "Node.js", "PostgreSQL", "Firebase", "Tailwind CSS"],
+    "keyFeatures": [
+      "Multi-platform content scheduling",
+      "Real-time engagement analytics",
+      "Team collaboration workspace",
+      "Automated social media monitoring",
+      "Detailed performance reports"
+    ],
+    "images": {
+      "thumbnail": "/images/projects/social_media_platform_thumbnail.png",
+      "hero": "/images/projects/social_media_platform_screen1.png",
+      "gallery": [
+        "/images/projects/social_media_platform_screen2.png",
+        "/images/projects/social_media_platform_screen3.png",
+        "/images/projects/social_media_platform_screen4.png"
+      ]
+    },
+    "links": {
+      "liveDemo": "https://social-media-platform-demo.com",
+      "github": "https://github.com/hamdi-jerbi/social-media-platform",
+      "caseStudy": "https://hamdi-jerbi.com/case-study/social-media"
+    }
+  },
+  {
+    "id": "fitness-tracking-app",
+    "title": "Fitness Tracking Mobile App",
+    "role": "Mobile Developer & UI/UX Designer",
+    "duration": "08/2024 – 11/2024",
+    "category": "Mobile Development",
+    "shortDescription": "Created a user-friendly fitness tracking application with personalized workout recommendations, progress visualization, and community engagement features.",
+    "longDescription": "I developed a comprehensive fitness tracking mobile application that motivated users to achieve their health goals through engaging design and smart features. The app included workout tracking, progress visualization through charts and metrics, personalized recommendation algorithms, and social features for community engagement. I conducted user testing with fitness enthusiasts to refine the interface and ensure the app was intuitive for users of all technical levels. The design prioritized motivational elements like achievement badges, progress graphs, and personalized encouragement messages. I implemented the app in Flutter to ensure cross-platform compatibility and optimal performance. The app reached 10,000+ downloads and maintained a 4.8-star rating on app stores.",
+    "technologies": ["Flutter", "Dart", "Firebase", "REST APIs", "Figma"],
+    "keyFeatures": [
+      "Real-time workout tracking",
+      "Personalized fitness recommendations",
+      "Progress visualization and analytics",
+      "Social sharing and community features",
+      "Wearable device integration support"
+    ],
+    "images": {
+      "thumbnail": "/images/projects/fitness_app_thumbnail.png",
+      "hero": "/images/projects/fitness_app_screen1.png",
+      "gallery": [
+        "/images/projects/fitness_app_screen2.png",
+        "/images/projects/fitness_app_screen3.png",
+        "/images/projects/fitness_app_screen4.png"
+      ]
+    },
+    "links": {
+      "liveDemo": "https://fitness-app-demo.com",
+      "github": "https://github.com/hamdi-jerbi/fitness-tracking-app",
+      "caseStudy": "https://hamdi-jerbi.com/case-study/fitness-app"
+    }
+  },
+  {
+    "id": "travel-itinerary-planner",
+    "title": "Travel Itinerary Planner",
+    "role": "Full-Stack Developer & UX Designer",
+    "duration": "05/2024 – 08/2024",
+    "category": "Frontend Development",
+    "shortDescription": "Designed and developed an intelligent travel planning platform that helps users create personalized itineraries, discover attractions, and manage travel logistics seamlessly.",
+    "longDescription": "I built a comprehensive travel planning application that combined smart algorithms with intuitive user interface design to simplify trip planning. Users could input their preferences and travel dates, and the app would generate personalized itineraries with curated attractions, restaurants, and experiences. The platform featured interactive maps, real-time weather integration, budget tracking, and collaborative planning for group trips. I conducted user research with travelers to understand their pain points and designed solutions that made travel planning enjoyable rather than overwhelming. The design included responsive layouts for mobile and desktop, offline functionality for accessing itineraries on flights, and seamless integration with booking platforms. The platform currently has 50,000+ active users and continues to expand its feature set.",
+    "technologies": ["React", "Node.js", "MongoDB", "Google Maps API", "Tailwind CSS"],
+    "keyFeatures": [
+      "AI-powered itinerary generation",
+      "Interactive map-based planning",
+      "Budget tracking and expense management",
+      "Real-time weather integration",
+      "Collaborative group planning"
+    ],
+    "images": {
+      "thumbnail": "/images/projects/travel_planner_thumbnail.png",
+      "hero": "/images/projects/travel_planner_screen1.png",
+      "gallery": [
+        "/images/projects/travel_planner_screen2.png",
+        "/images/projects/travel_planner_screen3.png",
+        "/images/projects/travel_planner_screen4.png"
+      ]
+    },
+    "links": {
+      "liveDemo": "https://travel-planner-demo.com",
+      "github": "https://github.com/hamdi-jerbi/travel-planner",
+      "caseStudy": "https://hamdi-jerbi.com/case-study/travel-planner"
+    }
+  },
+  {
+    "id": "project-management-tool",
+    "title": "Project Management Collaboration Tool",
+    "role": "Full-Stack Developer & UI/UX Specialist",
+    "duration": "02/2024 – 05/2024",
+    "category": "Frontend Development",
+    "shortDescription": "Built an intuitive project management platform that streamlines team collaboration, task tracking, and project visibility for remote and hybrid teams.",
+    "longDescription": "I architected and developed a project management collaboration tool designed specifically for distributed teams. The platform featured Kanban boards, Gantt charts, real-time collaboration, automated notifications, and comprehensive reporting. I conducted extensive research with team leads and project managers to understand workflow requirements and designed interfaces that reduced learning curves while maximizing productivity. The application supported multiple project views (board, list, timeline), custom workflows, and integration with popular tools like Slack and GitHub. I implemented real-time updates using WebSockets to ensure all team members saw synchronized information. The design emphasized clarity and reduce cognitive load through thoughtful information hierarchy and progressive disclosure. The platform is used by 200+ teams managing 5,000+ projects.",
+    "technologies": ["React", "Node.js", "PostgreSQL", "Socket.io", "Tailwind CSS"],
+    "keyFeatures": [
+      "Multiple project view options (Board, List, Timeline)",
+      "Real-time team collaboration",
+      "Automated workflow and notifications",
+      "Comprehensive analytics and reporting",
+      "Third-party tool integrations"
+    ],
+    "images": {
+      "thumbnail": "/images/projects/project_management_thumbnail.png",
+      "hero": "/images/projects/project_management_screen1.png",
+      "gallery": [
+        "/images/projects/project_management_screen2.png",
+        "/images/projects/project_management_screen3.png",
+        "/images/projects/project_management_screen4.png"
+      ]
+    },
+    "links": {
+      "liveDemo": "https://project-management-demo.com",
+      "github": "https://github.com/hamdi-jerbi/project-management-tool",
+      "caseStudy": "https://hamdi-jerbi.com/case-study/project-management"
+    }
+  }
+]
+

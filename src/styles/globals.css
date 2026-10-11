@@ -1,0 +1,182 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary: #E8A045;
+    --surface-900: #161412;
+    --surface-800: #221E1C;
+    --surface-700: #332E2B;
+    --bg-light: #F5F4F2;
+    --bg-dark: #0D0B0A;
+    --text-light: #1A1714;
+    --text-dark: #E8E4DE;
+    --border-light: #D8D3CB;
+    --border-dark: #2E2822;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    overflow-x: hidden;
+    min-height: 100vh;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11', 'kern';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  h1, h2, h3, h4, h5 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    letter-spacing: -0.03em;
+    font-feature-settings: 'kern', 'liga', 'ss01';
+  }
+
+  ::selection {
+    background-color: rgba(232, 160, 69, 0.25);
+    color: #E8A045;
+  }
+}
+
+/* ─── Scrollbar ─────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: rgba(232, 160, 69, 0.3);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover { background: rgba(232, 160, 69, 0.6); }
+
+/* ─── Glassmorphism with visible borders in both themes ─────── */
+.glass-nav {
+  background: rgba(245, 244, 242, 0.88);
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  border: 1px solid rgba(26, 23, 20, 0.12);
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+}
+.dark .glass-nav {
+  background: rgba(13, 11, 10, 0.9);
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 24px -2px rgba(0, 0, 0, 0.4);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border: 1px solid rgba(26, 23, 20, 0.1);
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.06);
+}
+.dark .glass-card {
+  background: rgba(26, 22, 20, 0.65);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 24px -2px rgba(0, 0, 0, 0.35);
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(26, 23, 20, 0.12);
+  box-shadow: 0 16px 48px -8px rgba(0, 0, 0, 0.12);
+}
+.dark .glass-panel {
+  background: rgba(22, 20, 18, 0.9);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 16px 48px -8px rgba(0, 0, 0, 0.5);
+}
+
+/* ─── Typography utilities ──────────────────────────────────── */
+.text-gradient {
+  background: linear-gradient(135deg, #E8A045 0%, #F0BC74 50%, #C4936A 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-cool {
+  background: linear-gradient(135deg, #E8E4DE 0%, #E8A045 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ─── Grain overlay ─────────────────────────────────────────── */
+.grain::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.02'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ─── Button primary with complete styles ───────────────────── */
+.btn-primary {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #E8A045;
+  color: #1A1714;
+  font-weight: 600;
+  font-size: 0.875rem;
+  padding: 0.875rem 1.75rem;
+  border-radius: 0.75rem;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 14px rgba(232, 160, 69, 0.25);
+  cursor: pointer;
+}
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #F0BC74, #E8A045, #D4892E);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: inherit;
+}
+.btn-primary:hover::before { opacity: 1; }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(232,160,69,0.35); }
+.btn-primary:active { transform: translateY(0); }
+.btn-primary > * { position: relative; z-index: 1; }
+
+/* ─── Section divider ───────────────────────────────────────── */
+.section-rule {
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(232,160,69,0.35), transparent);
+}
+
+/* ─── Animations ────────────────────────────────────────────── */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in { animation: fadeIn 0.5s ease-out forwards; }
+
+/* ─── Project card hover state ──────────────────────────────── */
+.project-card-img {
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.group:hover .project-card-img { transform: scale(1.04); }
+
+/* ─── Focus ring ────────────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid #E8A045;
+  outline-offset: 3px;
+  border-radius: 6px;
+}

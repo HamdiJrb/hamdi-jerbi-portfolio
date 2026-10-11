@@ -1,0 +1,4 @@
+# Project Images Directory
+Place your project screenshots and thumbnails in this directory.
+See `src/data/projects.json` for exact file name bindings.
+
