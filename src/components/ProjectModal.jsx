@@ -8,8 +8,9 @@ export default function ProjectModal({ project, onClose }) {
 
   const allImages = [project.images.hero, ...project.images.gallery];
   const [activeImageIndex, setActiveImageIndex] = useState(0);
-  const [touchStart, setTouchStart] = useState(null);
-  const [touchEnd, setTouchEnd] = useState(null);
+  const [dragX, setDragX] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
+  const drag = useRef({ active: false, moved: false, startX: 0, startY: 0, width: 1 });
   const [brokenImages, setBrokenImages] = useState({});
 
   const modalRef = useRef(null);
@@ -35,15 +36,42 @@ export default function ProjectModal({ project, onClose }) {
     };
   }, [activeImageIndex, allImages.length]);
 
-  // Touch swipe handlers
-  const minSwipeDistance = 50;
-  const onTouchStart = (e) => { setTouchEnd(null); setTouchStart(e.targetTouches[0].clientX); };
-  const onTouchMove = (e) => setTouchEnd(e.targetTouches[0].clientX);
-  const onTouchEnd = () => {
-    if (!touchStart || !touchEnd) return;
-    const distance = touchStart - touchEnd;
-    if (distance > minSwipeDistance) nextImage();
-    else if (distance < -minSwipeDistance) prevImage();
+  // Swipe / drag between images (touch, pen and mouse)
+  const swipeThreshold = 0.15; // fraction of the slide width
+  const onPointerDown = (e) => {
+    if (e.pointerType === 'mouse' && e.button !== 0) return;
+    if (e.target.closest('button')) return;
+    drag.current = {
+      active: true,
+      moved: false,
+      startX: e.clientX,
+      startY: e.clientY,
+      width: e.currentTarget.getBoundingClientRect().width || 1,
+    };
+  };
+  const onPointerMove = (e) => {
+    const d = drag.current;
+    if (!d.active) return;
+    const dx = e.clientX - d.startX;
+    if (!d.moved) {
+      if (Math.abs(dx) < 6) return;
+      if (Math.abs(e.clientY - d.startY) > Math.abs(dx)) { d.active = false; return; }
+      d.moved = true;
+      setIsDragging(true);
+      e.currentTarget.setPointerCapture(e.pointerId);
+    }
+    setDragX(dx);
+  };
+  const endDrag = (e) => {
+    const d = drag.current;
+    if (!d.active) return;
+    d.active = false;
+    if (!d.moved) return;
+    const dx = e.clientX - d.startX;
+    setIsDragging(false);
+    setDragX(0);
+    if (dx < -d.width * swipeThreshold) nextImage();
+    else if (dx > d.width * swipeThreshold) prevImage();
   };
 
   const markImageBroken = (index) => setBrokenImages((prev) => ({ ...prev, [index]: true }));
@@ -91,33 +119,44 @@ export default function ProjectModal({ project, onClose }) {
 
         {/* Scrollable body */}
         <div className="overflow-y-auto">
-          {/* Hero image (full-width, aspect-video) */}
+          {/* Image slider (swipe / drag, arrows, keyboard) */}
           <div
-            className="relative w-full aspect-video bg-surface-100 dark:bg-slate-950 group"
-            onTouchStart={onTouchStart}
-            onTouchMove={onTouchMove}
-            onTouchEnd={onTouchEnd}
+            className="relative w-full aspect-video bg-surface-100 dark:bg-surface-950 group overflow-hidden select-none touch-pan-y"
+            onPointerDown={onPointerDown}
+            onPointerMove={onPointerMove}
+            onPointerUp={endDrag}
+            onPointerCancel={endDrag}
           >
-            {!brokenImages[activeImageIndex] ? (
-              <img
-                src={publicAsset(allImages[activeImageIndex])}
-                alt={`${project.title} screenshot ${activeImageIndex + 1}`}
-                onError={() => markImageBroken(activeImageIndex)}
-                className="w-full h-full object-cover object-top"
-              />
-            ) : (
-              <div className="w-full h-full flex flex-col items-center justify-center p-8 bg-surface-100 dark:bg-surface-900 text-center relative overflow-hidden">
-                <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/30 flex items-center justify-center mb-3">
-                  <Layers className="w-6 h-6 text-primary" />
+            <div
+              className={`flex h-full ${isDragging ? '' : 'transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]'} ${isDragging ? 'cursor-grabbing' : 'cursor-grab'}`}
+              style={{ transform: `translateX(calc(${-activeImageIndex * 100}% + ${dragX}px))` }}
+            >
+              {allImages.map((img, idx) => (
+                <div key={idx} className="w-full h-full shrink-0">
+                  {!brokenImages[idx] ? (
+                    <img
+                      src={publicAsset(img)}
+                      alt={`${project.title} screenshot ${idx + 1}`}
+                      onError={() => markImageBroken(idx)}
+                      draggable={false}
+                      className="w-full h-full object-cover object-top pointer-events-none"
+                    />
+                  ) : (
+                    <div className="w-full h-full flex flex-col items-center justify-center p-8 bg-surface-100 dark:bg-surface-900 text-center">
+                      <div className="w-10 h-10 rounded-xl bg-primary/10 border border-primary/25 flex items-center justify-center mb-3">
+                        <Layers className="w-5 h-5 text-primary" />
+                      </div>
+                      <p className="font-heading font-bold text-sm text-textLight dark:text-textDark">
+                        {project.title}
+                      </p>
+                      <span className="font-mono text-[10px] uppercase tracking-widest text-slate-500 mt-1">
+                        Preview {idx + 1}
+                      </span>
+                    </div>
+                  )}
                 </div>
-                <p className="font-heading font-bold text-base text-textLight dark:text-textDark">
-                  {project.title}
-                </p>
-                <span className="font-mono text-xs uppercase tracking-widest text-primary mt-1">
-                  Preview #{activeImageIndex + 1}
-                </span>
-              </div>
-            )}
+              ))}
+            </div>
 
             {/* Navigation arrows (desktop) */}
             {allImages.length > 1 && (
@@ -141,24 +180,39 @@ export default function ProjectModal({ project, onClose }) {
               </>
             )}
 
-            {/* Slide counter */}
-            <div className="absolute bottom-3 right-3 px-2.5 py-1 rounded-md bg-black/70 backdrop-blur-md text-white text-xs font-mono border border-white/10">
-              {activeImageIndex + 1} / {allImages.length}
+            {/* Slide counter + dots */}
+            {allImages.length > 1 && (
+              <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex items-center gap-1.5 px-2 py-1 rounded-full bg-black/35 backdrop-blur-md border border-white/10">
+                {allImages.map((_, idx) => (
+                  <button
+                    key={idx}
+                    type="button"
+                    onClick={() => setActiveImageIndex(idx)}
+                    aria-label={`Go to image ${idx + 1}`}
+                    className={`h-1.5 rounded-full transition-all duration-300 ${
+                      activeImageIndex === idx ? 'w-4 bg-white' : 'w-1.5 bg-white/45 hover:bg-white/70'
+                    }`}
+                  />
+                ))}
+              </div>
+            )}
+            <div className="absolute top-3 right-3 px-2 py-0.5 rounded-full bg-black/35 backdrop-blur-md border border-white/10 text-white/90 text-[10px] font-mono tabular-nums tracking-wide">
+              {activeImageIndex + 1}<span className="text-white/50"> / {allImages.length}</span>
             </div>
           </div>
 
           {/* Thumbnail strip */}
           {allImages.length > 1 && (
-            <div className="flex items-center gap-2 px-6 py-3 bg-surface-50 dark:bg-surface-850 border-b border-borderLight dark:border-borderDark overflow-x-auto">
+            <div className="flex items-center gap-2 px-6 py-2.5 bg-surface-50 dark:bg-surface-950/70 border-b border-borderLight dark:border-borderDark overflow-x-auto">
               {allImages.map((img, idx) => (
                 <button
                   key={idx}
                   onClick={() => setActiveImageIndex(idx)}
                   aria-label={`Switch to image ${idx + 1}`}
-                  className={`relative shrink-0 w-16 h-11 rounded-md overflow-hidden border transition-all duration-200 ${
+                  className={`relative shrink-0 w-12 h-8 rounded-md overflow-hidden border transition-all duration-200 ${
                     activeImageIndex === idx
-                      ? 'border-primary ring-2 ring-primary/30'
-                      : 'border-borderLight dark:border-borderDark opacity-60 hover:opacity-100 hover:border-primary/50'
+                      ? 'border-primary ring-1 ring-primary/40'
+                      : 'border-borderLight dark:border-borderDark opacity-50 hover:opacity-100 hover:border-primary/50'
                   }`}
                 >
                   {!brokenImages[idx] ? (
@@ -169,8 +223,8 @@ export default function ProjectModal({ project, onClose }) {
                       className="w-full h-full object-cover"
                     />
                   ) : (
-                    <div className="w-full h-full bg-surface-200 dark:bg-slate-800 flex items-center justify-center text-[10px] text-slate-500 font-mono">
-                      #{idx + 1}
+                    <div className="w-full h-full bg-surface-100 dark:bg-surface-800 flex items-center justify-center text-[9px] leading-none text-slate-400 dark:text-slate-500 font-mono tabular-nums">
+                      {idx + 1}
                     </div>
                   )}
                 </button>
@@ -201,7 +255,7 @@ export default function ProjectModal({ project, onClose }) {
                   {project.keyFeatures.map((feature, i) => (
                     <div
                       key={i}
-                      className="flex items-start gap-2.5 p-3.5 rounded-xl bg-surface-50 dark:bg-surface-800/60 border border-borderLight dark:border-borderDark shadow-sm"
+                      className="flex items-start gap-2.5 p-3.5 rounded-xl bg-surface-50 dark:bg-surface-800/40 border border-borderLight dark:border-borderDark"
                     >
                       <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
                       <span className="text-xs font-medium text-slate-700 dark:text-slate-200 leading-snug">
@@ -214,7 +268,7 @@ export default function ProjectModal({ project, onClose }) {
             </div>
 
             {/* RIGHT: metadata sidebar */}
-            <div className="p-6 sm:p-8 space-y-7 bg-surface-50/50 dark:bg-surface-850/20">
+            <div className="p-6 sm:p-8 space-y-7 bg-surface-50 dark:bg-surface-950/50">
               {/* Role & Duration */}
               <div className="space-y-4">
                 <div>
@@ -234,7 +288,7 @@ export default function ProjectModal({ project, onClose }) {
                   {project.technologies.map((tech, index) => (
                     <span
                       key={index}
-                      className="px-2.5 py-1 rounded-md text-[11px] font-mono font-medium text-primary border border-primary/30 bg-primary/5"
+                      className="px-2.5 py-1 rounded-md text-[11px] font-mono font-medium text-primary-dark dark:text-primary border border-primary/25 bg-primary/10"
                     >
                       {tech}
                     </span>
@@ -249,7 +303,7 @@ export default function ProjectModal({ project, onClose }) {
                     href={project.links.liveDemo}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-between w-full px-4 py-2.5 rounded-lg border border-borderLight dark:border-borderDark bg-white dark:bg-surface-800 text-slate-700 dark:text-slate-200 hover:border-primary hover:text-primary dark:hover:border-primary dark:hover:text-primary text-sm font-medium transition-all duration-200 shadow-sm group"
+                    className="flex items-center justify-between w-full px-4 py-2.5 rounded-lg border border-borderLight dark:border-borderDark bg-white dark:bg-surface-800/60 text-slate-700 dark:text-slate-200 hover:border-primary hover:text-primary dark:hover:border-primary dark:hover:text-primary text-sm font-medium transition-all duration-200 shadow-sm group"
                   >
                     <span>Visit Live Platform</span>
                     <ExternalLink className="w-3.5 h-3.5 text-slate-400 group-hover:text-primary transition-colors" />
@@ -260,7 +314,7 @@ export default function ProjectModal({ project, onClose }) {
                     href={project.links.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-between w-full px-4 py-2.5 rounded-lg border border-borderLight dark:border-borderDark bg-white dark:bg-surface-800 text-slate-700 dark:text-slate-200 hover:border-primary hover:text-primary dark:hover:border-primary dark:hover:text-primary text-sm font-medium transition-all duration-200 shadow-sm group"
+                    className="flex items-center justify-between w-full px-4 py-2.5 rounded-lg border border-borderLight dark:border-borderDark bg-white dark:bg-surface-800/60 text-slate-700 dark:text-slate-200 hover:border-primary hover:text-primary dark:hover:border-primary dark:hover:text-primary text-sm font-medium transition-all duration-200 shadow-sm group"
                   >
                     <span>Source Repository</span>
                     <GithubIcon className="w-3.5 h-3.5 text-slate-400 group-hover:text-primary transition-colors" />
@@ -271,7 +325,7 @@ export default function ProjectModal({ project, onClose }) {
                     href={project.links.caseStudy}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-between w-full px-4 py-2.5 rounded-lg border border-borderLight dark:border-borderDark bg-white dark:bg-surface-800 text-slate-700 dark:text-slate-200 hover:border-primary hover:text-primary dark:hover:border-primary dark:hover:text-primary text-sm font-medium transition-all duration-200 shadow-sm group"
+                    className="flex items-center justify-between w-full px-4 py-2.5 rounded-lg border border-borderLight dark:border-borderDark bg-white dark:bg-surface-800/60 text-slate-700 dark:text-slate-200 hover:border-primary hover:text-primary dark:hover:border-primary dark:hover:text-primary text-sm font-medium transition-all duration-200 shadow-sm group"
                   >
                     <span>Read Full Case Study</span>
                     <ArrowRight className="w-3.5 h-3.5 text-slate-400 group-hover:text-primary transition-colors" />
