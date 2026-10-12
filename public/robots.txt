@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://hamdi-jerbi.com/sitemap.xml
+Sitemap: https://hamdijerbi.me/sitemap.xml
 

@@ -3,7 +3,8 @@ import react from '@vitejs/plugin-react';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: process.env.GITHUB_ACTIONS ? '/hamdi-jerbi-portfolio/' : '/',
+  // Relative base so the build works at both hamdijerbi.me and the github.io project path
+  base: './',
   plugins: [react()],
   server: {
     port: 3000,
