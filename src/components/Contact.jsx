@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle, Loader2, ArrowRight } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle, Loader2, ArrowRight, FileText } from 'lucide-react';
+import { publicAsset } from '../utils/publicAsset';
 import { GithubIcon, LinkedinIcon, BehanceIcon, InstagramIcon } from './SocialIcons';
 import portfolioData from '../data/portfolio.json';
+
+// FormSubmit alias for h.jerbi78@gmail.com (keeps the address out of the request URL)
+const FORMSUBMIT_ID = 'e968e87284a37999bb8bdb58495053a0';
 
 export default function Contact() {
   const { personal } = portfolioData;
@@ -57,19 +61,23 @@ export default function Contact() {
     setErrorMessage('');
 
     try {
-      const response = await fetch('https://formspree.io/f/xvgzgeyw', {
+      const response = await fetch(`https://formsubmit.co/ajax/${FORMSUBMIT_ID}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          ...formData,
+          _subject: `Portfolio: ${formData.subject}`,
+          _replyto: formData.email,
+          _template: 'table',
+          _captcha: 'false',
+        }),
       });
-      if (response.ok) {
+      const data = await response.json().catch(() => null);
+      if (response.ok && String(data?.success) === 'true') {
         setSubmitStatus('success');
         setFormData({ name: '', email: '', subject: '', message: '' });
       } else {
-        const data = await response.json();
-        setErrorMessage(
-          data?.errors ? data.errors.map((err) => err.message).join(', ') : 'Failed to send message. Please try emailing directly.'
-        );
+        setErrorMessage(data?.message || 'Failed to send message. Please try emailing directly.');
         setSubmitStatus('error');
       }
     } catch {
@@ -152,7 +160,7 @@ export default function Contact() {
             </div>
 
             {/* Social icons */}
-            <div className="flex items-center gap-3 pt-2">
+            <div className="flex flex-wrap items-center gap-3 pt-2">
               {socialLinks.map(({ href, Icon, label }) => (
                 <a
                   key={label}
@@ -165,6 +173,15 @@ export default function Contact() {
                   <Icon className="w-4 h-4" />
                 </a>
               ))}
+              <a
+                href={publicAsset('/cv/Hamdi_Jerbi_CV.pdf')}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 h-10 px-4 ml-1 rounded-lg border border-primary/50 text-primary text-sm font-semibold hover:bg-primary hover:text-slate-900 hover:-translate-y-0.5 transition-all duration-200 shadow-sm"
+              >
+                <FileText className="w-4 h-4" />
+                View CV
+              </a>
             </div>
 
             {/* Closing note */}

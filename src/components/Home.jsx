@@ -1,6 +1,6 @@
 import React from 'react';
 import { publicAsset } from '../utils/publicAsset';
-import { ArrowRight, ArrowUpRight, MapPin } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, FileText, MapPin } from 'lucide-react';
 import { GithubIcon, LinkedinIcon, BehanceIcon, InstagramIcon } from './SocialIcons';
 import portfolioData from '../data/portfolio.json';
 
@@ -91,7 +91,7 @@ export default function Home() {
             </div>
 
             {/* Social links */}
-            <div className="flex items-center gap-2.5">
+            <div className="flex flex-wrap items-center gap-2.5">
               {socials.map(({ href, icon: Icon, label }) => (
                 <a
                   key={label}
@@ -104,6 +104,15 @@ export default function Home() {
                   <Icon className="w-4 h-4" />
                 </a>
               ))}
+              <a
+                href={publicAsset('/cv/Hamdi_Jerbi_CV.pdf')}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 h-10 px-4 ml-1 rounded-lg border border-primary/50 text-primary text-sm font-semibold hover:bg-primary hover:text-slate-900 hover:-translate-y-0.5 transition-all duration-200 shadow-sm"
+              >
+                <FileText className="w-4 h-4" />
+                View CV
+              </a>
             </div>
           </div>
 
