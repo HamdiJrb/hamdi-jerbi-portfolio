@@ -1,7 +1,7 @@
 import React from 'react';
 import { ArrowUp } from 'lucide-react';
 import portfolioData from '../data/portfolio.json';
-import { publicAsset } from '../utils/publicAsset';
+import BrandMark from './BrandMark';
 
 export default function Footer() {
   const { personal } = portfolioData;
@@ -25,11 +25,9 @@ export default function Footer() {
           {/* LEFT — Brand mark */}
           <div className="flex items-center gap-3">
             {/* HJ monogram */}
-            <img
-              src={publicAsset('/hj_favicon.svg')}
-              alt="HJ"
-              className="w-8 h-8 object-contain"
-            />
+            <span className="w-8 h-8 rounded-md flex items-center justify-center bg-primary/10 border border-primary/30">
+              <BrandMark className="w-4 h-4 text-primary" />
+            </span>
             <div>
               <span className="font-heading font-bold text-sm text-textLight dark:text-textDark block leading-tight">
                 Hamdi Jerbi

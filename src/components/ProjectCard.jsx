@@ -10,9 +10,9 @@ function WatchDemoButton({ onClick }) {
       type="button"
       onClick={(e) => { e.stopPropagation(); onClick(); }}
       aria-label="Watch video demo"
-      className="group/play inline-flex items-center gap-1.5 pl-1 pr-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-white text-[11px] font-semibold hover:bg-primary hover:border-primary hover:text-slate-950 transition-colors duration-200 shadow-md focus:outline-none focus:ring-2 focus:ring-primary/50"
+      className="group/play inline-flex items-center gap-1.5 pl-1 pr-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-white text-[11px] font-semibold hover:bg-primary hover:border-primary hover:text-on-primary transition-colors duration-200 shadow-md focus:outline-none focus:ring-2 focus:ring-primary/50"
     >
-      <span className="w-6 h-6 rounded-full bg-primary text-slate-950 flex items-center justify-center group-hover/play:bg-slate-950 group-hover/play:text-primary transition-colors duration-200">
+      <span className="w-6 h-6 rounded-full bg-primary text-on-primary flex items-center justify-center group-hover/play:bg-slate-950 group-hover/play:text-primary transition-colors duration-200">
         <Play className="w-3 h-3 fill-current ml-0.5" />
       </span>
       Watch demo
@@ -27,8 +27,8 @@ function ImageFallback({ category, featured }) {
       className="w-full h-full flex flex-col items-start justify-end p-6 md:p-8 relative overflow-hidden bg-surface-100 dark:bg-surface-950"
       style={{
         backgroundImage: [
-          'repeating-linear-gradient(0deg, rgba(232,160,69,0.06) 0px, rgba(232,160,69,0.06) 1px, transparent 1px, transparent 36px)',
-          'repeating-linear-gradient(90deg, rgba(232,160,69,0.06) 0px, rgba(232,160,69,0.06) 1px, transparent 1px, transparent 36px)',
+          'repeating-linear-gradient(0deg, rgba(138,150,120,0.06) 0px, rgba(138,150,120,0.06) 1px, transparent 1px, transparent 36px)',
+          'repeating-linear-gradient(90deg, rgba(138,150,120,0.06) 0px, rgba(138,150,120,0.06) 1px, transparent 1px, transparent 36px)',
         ].join(', '),
       }}
     >
@@ -106,7 +106,7 @@ export default function ProjectCard({ project, onOpenModal, featured = false }) 
         {/* Top-right eye */}
         <div className="absolute top-5 right-5 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           <span className="w-9 h-9 rounded-full bg-primary flex items-center justify-center shadow-lg">
-            <Eye className="w-4 h-4 text-slate-950" />
+            <Eye className="w-4 h-4 text-on-primary" />
           </span>
         </div>
 
@@ -182,7 +182,7 @@ export default function ProjectCard({ project, onOpenModal, featured = false }) 
         {/* Eye icon on hover */}
         <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
           <span className="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-md">
-            <Eye className="w-3.5 h-3.5 text-slate-950" />
+            <Eye className="w-3.5 h-3.5 text-on-primary" />
           </span>
         </div>
 
@@ -240,7 +240,7 @@ export default function ProjectCard({ project, onOpenModal, featured = false }) 
         <span className="font-sans text-xs font-semibold text-primary">
           Explore →
         </span>
-        <div className="w-7 h-7 rounded-full border border-primary/30 bg-primary/5 text-primary flex items-center justify-center group-hover:bg-primary group-hover:border-primary group-hover:text-slate-950 transition-colors duration-200">
+        <div className="w-7 h-7 rounded-full border border-primary/30 bg-primary/5 text-primary flex items-center justify-center group-hover:bg-primary group-hover:border-primary group-hover:text-on-primary transition-colors duration-200">
           <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
         </div>
       </div>

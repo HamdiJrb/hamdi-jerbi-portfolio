@@ -109,7 +109,7 @@ export default function Contact() {
       <div
         aria-hidden="true"
         className="pointer-events-none absolute -bottom-20 -left-20 w-[480px] h-[480px] rounded-full blur-3xl opacity-30 dark:opacity-20"
-        style={{ background: 'radial-gradient(circle, rgba(232,160,69,0.4) 0%, transparent 70%)' }}
+        style={{ background: 'radial-gradient(circle, rgba(138,150,120,0.4) 0%, transparent 70%)' }}
       />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -177,7 +177,7 @@ export default function Contact() {
                 href={publicAsset('/cv/Hamdi_Jerbi_CV.pdf')}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 h-10 px-4 ml-1 rounded-lg border border-primary/50 text-primary text-sm font-semibold hover:bg-primary hover:text-slate-900 hover:-translate-y-0.5 transition-all duration-200 shadow-sm"
+                className="inline-flex items-center gap-2 h-10 px-4 ml-1 rounded-lg border border-primary/50 text-primary text-sm font-semibold hover:bg-primary hover:text-on-primary hover:-translate-y-0.5 transition-all duration-200 shadow-sm"
               >
                 <FileText className="w-4 h-4" />
                 View CV

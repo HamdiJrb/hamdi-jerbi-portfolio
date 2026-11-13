@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, ArrowUpRight } from 'lucide-react';
 import ThemeToggle from './ThemeToggle';
-import { publicAsset } from '../utils/publicAsset';
+import BrandMark from './BrandMark';
 import { useScrollLock } from '../utils/scrollLock';
 
 const navLinks = [
@@ -84,11 +84,7 @@ export default function Navbar() {
                   transition-all duration-200
                 "
               >
-                <img
-                  src={publicAsset('/hj_favicon_text.svg')}
-                  alt="HJ"
-                  className="w-4 h-4 object-contain"
-                />
+                <BrandMark className="w-4 h-4 text-primary" />
               </div>
 
               {/* Name */}

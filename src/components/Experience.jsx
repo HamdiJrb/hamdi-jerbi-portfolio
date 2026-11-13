@@ -52,7 +52,7 @@ export default function Experience() {
                     className={[
                       'absolute -left-[5px] top-11 w-2.5 h-2.5 rounded-full border transition-all duration-300',
                       isCurrent
-                        ? 'bg-primary border-primary shadow-[0_0_8px_rgba(232,160,69,0.6)]'
+                        ? 'bg-primary border-primary shadow-[0_0_8px_rgba(138,150,120,0.6)]'
                         : 'bg-bgLight dark:bg-bgDark border-borderLight dark:border-borderDark group-hover:bg-primary/40 group-hover:border-primary',
                     ].join(' ')}
                   />
