@@ -3,7 +3,11 @@ import { Sparkles, Filter } from 'lucide-react';
 import projectsData from '../data/projects.json';
 import ProjectCard from './ProjectCard';
 
-const CATEGORIES = ['All', 'UI/UX Design', 'Frontend Development', 'Mobile Development'];
+const CATEGORIES = ['All', 'UI/UX Design', 'Mobile Development'];
+
+// A combined category like "UI/UX Design & Mobile Development" shows under both tabs
+const inCategory = (project, filter) =>
+  project.category.split(' & ').map((c) => c.trim()).includes(filter);
 
 export default function Work({ onSelectProject }) {
   const [activeFilter, setActiveFilter] = useState('All');
@@ -11,7 +15,7 @@ export default function Work({ onSelectProject }) {
   const filteredProjects =
     activeFilter === 'All'
       ? projectsData
-      : projectsData.filter((p) => p.category === activeFilter);
+      : projectsData.filter((p) => inCategory(p, activeFilter));
 
   return (
     <section

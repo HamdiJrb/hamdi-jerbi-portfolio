@@ -168,6 +168,23 @@
 }
 .animate-fade-in { animation: fadeIn 0.5s ease-out forwards; }
 
+/* Swipe hint: hand sweeps left/right, whole hint fades out at the end */
+@keyframes swipeHand {
+  0%, 100% { transform: translateX(-22px); }
+  50%      { transform: translateX(22px); }
+}
+@keyframes swipeHintLife {
+  0%   { opacity: 0; }
+  10%  { opacity: 1; }
+  85%  { opacity: 1; }
+  100% { opacity: 0; }
+}
+.swipe-hint { animation: swipeHintLife 2s ease-in-out forwards; }
+.swipe-hint-hand { animation: swipeHand 1.8s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .swipe-hint-hand { animation: none; }
+}
+
 /* ─── Project card hover state ──────────────────────────────── */
 .project-card-img {
   transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);

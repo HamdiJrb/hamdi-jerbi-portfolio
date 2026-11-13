@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Menu, X, ArrowUpRight } from 'lucide-react';
 import ThemeToggle from './ThemeToggle';
 import { publicAsset } from '../utils/publicAsset';
+import { useScrollLock } from '../utils/scrollLock';
 
 const navLinks = [
   { name: 'Home', href: '#home' },
@@ -39,10 +40,7 @@ export default function Navbar() {
   }, []);
 
   // Lock body scroll when overlay open
-  useEffect(() => {
-    document.body.style.overflow = isMenuOpen ? 'hidden' : '';
-    return () => { document.body.style.overflow = ''; };
-  }, [isMenuOpen]);
+  useScrollLock(isMenuOpen);
 
   const handleLinkClick = (e, href) => {
     e.preventDefault();

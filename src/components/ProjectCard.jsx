@@ -1,6 +1,24 @@
 import React, { useState } from 'react';
-import { ArrowUpRight, Calendar, User, Eye, Layers } from 'lucide-react';
+import { ArrowUpRight, Calendar, User, Eye, Layers, Play } from 'lucide-react';
 import { publicAsset } from '../utils/publicAsset';
+import VideoPlayer, { resolveVideo } from './VideoPlayer';
+
+/* ─── Watch demo pill (opens the video without opening the modal) ── */
+function WatchDemoButton({ onClick }) {
+  return (
+    <button
+      type="button"
+      onClick={(e) => { e.stopPropagation(); onClick(); }}
+      aria-label="Watch video demo"
+      className="group/play inline-flex items-center gap-1.5 pl-1 pr-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-white text-[11px] font-semibold hover:bg-primary hover:border-primary hover:text-slate-950 transition-colors duration-200 shadow-md focus:outline-none focus:ring-2 focus:ring-primary/50"
+    >
+      <span className="w-6 h-6 rounded-full bg-primary text-slate-950 flex items-center justify-center group-hover/play:bg-slate-950 group-hover/play:text-primary transition-colors duration-200">
+        <Play className="w-3 h-3 fill-current ml-0.5" />
+      </span>
+      Watch demo
+    </button>
+  );
+}
 
 /* ─── Image Fallback ─────────────────────────────────────────── */
 function ImageFallback({ category, featured }) {
@@ -42,6 +60,11 @@ function ImageFallback({ category, featured }) {
 /* ─── Main Component ─────────────────────────────────────────── */
 export default function ProjectCard({ project, onOpenModal, featured = false }) {
   const [imgError, setImgError] = useState(false);
+  const [isVideoOpen, setIsVideoOpen] = useState(false);
+  const video = resolveVideo(project.links?.videoDemo);
+  const player = isVideoOpen && video && (
+    <VideoPlayer video={video} title={project.title} onClose={() => setIsVideoOpen(false)} />
+  );
 
   /* ── FEATURED card (index 0 — full width, landscape, tall) ── */
   if (featured) {
@@ -73,10 +96,11 @@ export default function ProjectCard({ project, onOpenModal, featured = false }) 
         <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-transparent" />
 
         {/* Top-left badge */}
-        <div className="absolute top-5 left-5 z-10">
+        <div className="absolute top-5 left-5 z-10 flex flex-wrap items-center gap-2">
           <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-black/60 backdrop-blur-md border border-white/20 font-mono text-[10px] uppercase tracking-[0.15em] text-white font-medium">
             {project.category}
           </span>
+          {video && <WatchDemoButton onClick={() => setIsVideoOpen(true)} />}
         </div>
 
         {/* Top-right eye */}
@@ -120,6 +144,7 @@ export default function ProjectCard({ project, onOpenModal, featured = false }) 
             </span>
           </div>
         </div>
+        {player}
       </article>
     );
   }
@@ -160,6 +185,13 @@ export default function ProjectCard({ project, onOpenModal, featured = false }) 
             <Eye className="w-3.5 h-3.5 text-slate-950" />
           </span>
         </div>
+
+        {/* Watch demo */}
+        {video && (
+          <div className="absolute bottom-3 left-3">
+            <WatchDemoButton onClick={() => setIsVideoOpen(true)} />
+          </div>
+        )}
       </div>
 
       {/* Body */}
@@ -212,6 +244,7 @@ export default function ProjectCard({ project, onOpenModal, featured = false }) 
           <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
         </div>
       </div>
+      {player}
     </article>
   );
 }
