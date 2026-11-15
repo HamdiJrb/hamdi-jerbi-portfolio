@@ -88,46 +88,49 @@
     }
   },
   {
-    "id": "power-pedal-sprint",
-    "title": "Power Pedal Sprint Game",
-    "role": "UI/UX Designer",
-    "duration": "03/2026 – 04/2026",
-    "category": "UI/UX Design",
-    "shortDescription": "UI/UX for a two-screen pedal racing game at Dubai CommerCity event activations: tablet registration, live race bars and a leaderboard.",
-    "longDescription": "I led the UI/UX design of an interactive pedal game for Dubai CommerCity's event activations, working in Figma and Adobe Illustrator. Players choose single or two-player mode and register their details on a tablet. They then pedal to fill their progress bar on an animated wide screen in front of them, where a live bar shows their speed. The quicker player earns the higher position, and a leaderboard closes the experience for the crowd. I designed the full flow across both screens, focusing on clarity, engagement and intuitive navigation for event attendees. I also built a small design system of buttons, input fields, frames and backgrounds so every screen feels consistent.",
+    "id": "zeking-app",
+    "title": "Zeking Mobile App",
+    "role": "UI/UX Designer & Full-Stack Developer",
+    "duration": "01/2024 – 07/2024",
+    "category": "UI/UX Design & Mobile Development",
+    "shortDescription": "A cross-platform customer support app to create and track tickets, browse FAQs and articles, and get help from the Knight-Bot assistant.",
+    "longDescription": "I designed and developed Zeking, a cross-platform customer support app built with Flutter. Customers create tickets related to one of their projects, and each ticket is assigned to a support agent who resolves it. I designed the full experience in Figma, from onboarding and sign-in to ticket creation, filtering and tracking, with light and dark themes. Customers receive notifications when a ticket's status changes, and they can browse FAQs and the latest articles. I also integrated Knight-Bot, a trained Botpress assistant for self-support that can help generate tickets, backed by a Spring Boot and MongoDB API.",
     "technologies": [
       "Figma",
-      "Adobe Illustrator",
-      "Interactive Design",
-      "Design Systems"
+      "Flutter",
+      "Spring Boot",
+      "MongoDB",
+      "Botpress"
     ],
     "keyFeatures": [
-      "Single player and two-player modes",
-      "Tablet registration for each player",
-      "Clear instructions and 3-2-1-GO countdown",
-      "Live progress bars and timer on a wide screen",
-      "Results and leaderboard ranked by speed"
+      "Ticket creation linked to customer projects",
+      "Ticket tracking with search, filters and status",
+      "Knight-Bot assistant for 24/7 self-support",
+      "Searchable FAQ and latest articles hub",
+      "Status notifications, light and dark themes"
     ],
     "images": {
-      "thumbnail": "/images/projects/power-pedal-sprint/power-pedal-sprint_thumbnail.webp",
-      "hero": "/images/projects/power-pedal-sprint/power-pedal-sprint_thumbnail.webp",
+      "thumbnail": "/images/projects/zeking-app/zeking-app_thumbnail.webp",
+      "hero": "/images/projects/zeking-app/zeking-app_thumbnail.webp",
       "gallery": [
-        "/images/projects/power-pedal-sprint/power-pedal-sprint_overview.webp",
-        "/images/projects/power-pedal-sprint/power-pedal-sprint_homescreen.webp",
-        "/images/projects/power-pedal-sprint/power-pedal-sprint_userflow.webp",
-        "/images/projects/power-pedal-sprint/power-pedal-sprint_keyscreen1.webp",
-        "/images/projects/power-pedal-sprint/power-pedal-sprint_keyscreen2.webp",
-        "/images/projects/power-pedal-sprint/power-pedal-sprint_keyscreen3.webp",
-        "/images/projects/power-pedal-sprint/power-pedal-sprint_finalscreen.webp",
-        "/images/projects/power-pedal-sprint/power-pedal-sprint_designsystem.webp",
-        "/images/projects/power-pedal-sprint/power-pedal-sprint_reallife.webp"
+        "/images/projects/zeking-app/zeking-app_overview.webp",
+        "/images/projects/zeking-app/zeking-app_homescreen.webp",
+        "/images/projects/zeking-app/zeking-app_userflow.webp",
+        "/images/projects/zeking-app/zeking-app_keyscreen1.webp",
+        "/images/projects/zeking-app/zeking-app_keyscreen2.webp",
+        "/images/projects/zeking-app/zeking-app_keyscreen3.webp",
+        "/images/projects/zeking-app/zeking-app_keyscreen4.webp",
+        "/images/projects/zeking-app/zeking-app_keyscreen5.webp",
+        "/images/projects/zeking-app/zeking-app_keyscreen6.webp",
+        "/images/projects/zeking-app/zeking-app_finalscreen.webp",
+        "/images/projects/zeking-app/zeking-app_designsystem.webp",
+        "/images/projects/zeking-app/zeking-app_reallife.webp"
       ]
     },
     "links": {
       "liveDemo": "",
       "github": "",
-      "caseStudy": "",
-      "videoDemo": ""
+      "caseStudy": ""
     }
   },
   {
@@ -275,105 +278,45 @@
     }
   },
   {
-    "id": "zeking-app",
-    "title": "Zeking Mobile App",
-    "role": "Full-Stack Developer & UI Designer",
-    "duration": "02/2025 – 08/2025",
-    "category": "UI/UX Design & Mobile Development",
-    "shortDescription": "",
-    "longDescription": "",
-    "technologies": [
-      "Node.js",
-      "MongoDB"
-    ],
-    "keyFeatures": [],
-    "images": {
-      "thumbnail": "/images/projects/saas_dashboard_thumbnail.png",
-      "hero": "/images/projects/saas_dashboard_screen1.png",
-      "gallery": [
-        "/images/projects/saas_dashboard_screen2.png",
-        "/images/projects/saas_dashboard_screen3.png",
-        "/images/projects/saas_dashboard_screen4.png"
-      ]
-    },
-    "links": {
-      "caseStudy": "",
-      "videoDemo": "/videos/zeking-app/zeking_demo.mp4"
-    }
-  },
-  {
-    "id": "ai-sketch-activation",
-    "title": "AI Sketch Activation",
+    "id": "power-pedal-sprint",
+    "title": "Power Pedal Sprint Game",
     "role": "UI/UX Designer",
-    "duration": "08/2024 – 11/2024",
+    "duration": "03/2026 – 04/2026",
     "category": "UI/UX Design",
-    "shortDescription": "Created a user-friendly fitness tracking application with personalized workout recommendations, progress visualization, and community engagement features.",
-    "longDescription": "I developed a comprehensive fitness tracking mobile application that motivated users to achieve their health goals through engaging design and smart features. The app included workout tracking, progress visualization through charts and metrics, personalized recommendation algorithms, and social features for community engagement. I conducted user testing with fitness enthusiasts to refine the interface and ensure the app was intuitive for users of all technical levels. The design prioritized motivational elements like achievement badges, progress graphs, and personalized encouragement messages. I implemented the app in Flutter to ensure cross-platform compatibility and optimal performance. The app reached 10,000+ downloads and maintained a 4.8-star rating on app stores.",
+    "shortDescription": "UI/UX for a two-screen pedal racing game at Dubai CommerCity event activations: tablet registration, live race bars and a leaderboard.",
+    "longDescription": "I led the UI/UX design of an interactive pedal game for Dubai CommerCity's event activations, working in Figma and Adobe Illustrator. Players choose single or two-player mode and register their details on a tablet. They then pedal to fill their progress bar on an animated wide screen in front of them, where a live bar shows their speed. The quicker player earns the higher position, and a leaderboard closes the experience for the crowd. I designed the full flow across both screens, focusing on clarity, engagement and intuitive navigation for event attendees. I also built a small design system of buttons, input fields, frames and backgrounds so every screen feels consistent.",
     "technologies": [
-      "Flutter",
-      "Dart",
-      "Firebase",
-      "REST APIs",
-      "Figma"
+      "Figma",
+      "Adobe Illustrator",
+      "Interactive Design",
+      "Design Systems"
     ],
     "keyFeatures": [
-      "Real-time workout tracking",
-      "Personalized fitness recommendations",
-      "Progress visualization and analytics",
-      "Social sharing and community features",
-      "Wearable device integration support"
+      "Single player and two-player modes",
+      "Tablet registration for each player",
+      "Clear instructions and 3-2-1-GO countdown",
+      "Live progress bars and timer on a wide screen",
+      "Results and leaderboard ranked by speed"
     ],
     "images": {
-      "thumbnail": "/images/projects/fitness_app_thumbnail.png",
-      "hero": "/images/projects/fitness_app_screen1.png",
+      "thumbnail": "/images/projects/power-pedal-sprint/power-pedal-sprint_thumbnail.webp",
+      "hero": "/images/projects/power-pedal-sprint/power-pedal-sprint_thumbnail.webp",
       "gallery": [
-        "/images/projects/fitness_app_screen2.png",
-        "/images/projects/fitness_app_screen3.png",
-        "/images/projects/fitness_app_screen4.png"
+        "/images/projects/power-pedal-sprint/power-pedal-sprint_overview.webp",
+        "/images/projects/power-pedal-sprint/power-pedal-sprint_homescreen.webp",
+        "/images/projects/power-pedal-sprint/power-pedal-sprint_userflow.webp",
+        "/images/projects/power-pedal-sprint/power-pedal-sprint_keyscreen1.webp",
+        "/images/projects/power-pedal-sprint/power-pedal-sprint_keyscreen2.webp",
+        "/images/projects/power-pedal-sprint/power-pedal-sprint_keyscreen3.webp",
+        "/images/projects/power-pedal-sprint/power-pedal-sprint_finalscreen.webp",
+        "/images/projects/power-pedal-sprint/power-pedal-sprint_designsystem.webp",
+        "/images/projects/power-pedal-sprint/power-pedal-sprint_reallife.webp"
       ]
     },
     "links": {
-      "liveDemo": "https://fitness-app-demo.com",
-      "github": "https://github.com/hamdi-jerbi/fitness-tracking-app",
-      "caseStudy": "https://hamdi-jerbi.com/case-study/fitness-app",
-      "videoDemo": ""
-    }
-  },
-  {
-    "id": "njeri-app",
-    "title": "Njeri Mobile App",
-    "role": "Mobile Developer",
-    "duration": "08/2024 – 11/2024",
-    "category": "Mobile Development",
-    "shortDescription": "Created a user-friendly fitness tracking application with personalized workout recommendations, progress visualization, and community engagement features.",
-    "longDescription": "I developed a comprehensive fitness tracking mobile application that motivated users to achieve their health goals through engaging design and smart features. The app included workout tracking, progress visualization through charts and metrics, personalized recommendation algorithms, and social features for community engagement. I conducted user testing with fitness enthusiasts to refine the interface and ensure the app was intuitive for users of all technical levels. The design prioritized motivational elements like achievement badges, progress graphs, and personalized encouragement messages. I implemented the app in Flutter to ensure cross-platform compatibility and optimal performance. The app reached 10,000+ downloads and maintained a 4.8-star rating on app stores.",
-    "technologies": [
-      "Flutter",
-      "Dart",
-      "Firebase",
-      "REST APIs",
-      "Figma"
-    ],
-    "keyFeatures": [
-      "Real-time workout tracking",
-      "Personalized fitness recommendations",
-      "Progress visualization and analytics",
-      "Social sharing and community features",
-      "Wearable device integration support"
-    ],
-    "images": {
-      "thumbnail": "/images/projects/fitness_app_thumbnail.png",
-      "hero": "/images/projects/fitness_app_screen1.png",
-      "gallery": [
-        "/images/projects/fitness_app_screen2.png",
-        "/images/projects/fitness_app_screen3.png",
-        "/images/projects/fitness_app_screen4.png"
-      ]
-    },
-    "links": {
-      "liveDemo": "https://fitness-app-demo.com",
-      "github": "https://github.com/hamdi-jerbi/fitness-tracking-app",
-      "caseStudy": "https://hamdi-jerbi.com/case-study/fitness-app",
+      "liveDemo": "",
+      "github": "",
+      "caseStudy": "",
       "videoDemo": ""
     }
   }

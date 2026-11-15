@@ -62,9 +62,8 @@ export default function Navbar() {
               flex items-center justify-between
               px-4 py-2.5 rounded-full
               transition-all duration-500 ease-out
-              ${isScrolled
-                ? 'glass-nav border border-borderLight dark:border-borderDark shadow-soft'
-                : 'bg-transparent border border-transparent'}
+              glass-nav
+              ${isScrolled ? 'shadow-soft' : ''}
             `}
           >
 

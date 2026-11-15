@@ -104,7 +104,7 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" className="relative py-24 md:py-32 overflow-hidden bg-bgLight dark:bg-surface-900 transition-colors duration-300">
+    <section id="contact" className="relative py-24 md:py-32 overflow-hidden bg-ground transition-colors duration-300">
       {/* Ambient amber orb — left-side accent */}
       <div
         aria-hidden="true"

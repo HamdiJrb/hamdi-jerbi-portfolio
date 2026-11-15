@@ -77,14 +77,14 @@
 
 /* ─── Glassmorphism with visible borders in both themes ─────── */
 .glass-nav {
-  background: rgba(228, 228, 216, 0.88);
+  background: rgba(228, 228, 216, 0.7);
   backdrop-filter: blur(16px) saturate(140%);
   -webkit-backdrop-filter: blur(16px) saturate(140%);
   border: 1px solid rgba(28, 31, 25, 0.12);
   box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
 }
 .dark .glass-nav {
-  background: rgba(26, 28, 23, 0.9);
+  background: rgba(26, 28, 23, 0.6);
   backdrop-filter: blur(16px) saturate(140%);
   -webkit-backdrop-filter: blur(16px) saturate(140%);
   border: 1px solid rgba(234, 227, 210, 0.1);
@@ -200,6 +200,21 @@
 }
 @media (min-width: 1024px) {
   .hero-word { font-size: min(calc((100vw - 96px) / var(--fit)), calc(1304px / var(--fit))); }
+
+  /* Hero stage height follows the word, not just the viewport. The word stops
+     growing at the 1400px container, so on tall/wide screens a full-viewport
+     stage would push the intro far below it. Height = word's visible height
+     (~0.85 × font-size) + room for the intro block, capped by the viewport. */
+  .hero-stage {
+    --word-size: calc(min(100vw - 96px, 1304px) / 3.42);
+    --stage-fit: calc(var(--word-size) * 0.85 + 22rem);
+    --stage-room: calc(max(100svh, 760px) - 6rem);
+    height: min(var(--stage-room), var(--stage-fit));
+    /* Viewport height the stage doesn't use: the first 6rem stays below the
+       hero (laptop look), anything beyond becomes breathing room under the
+       navbar (capped at 6rem) instead of dead space below the hero. */
+    margin-top: clamp(0px, calc(var(--stage-room) - var(--stage-fit) - 6rem), 6rem);
+  }
 }
 
 /* Hero portrait. --tone darkens the photo on the black theme so it
@@ -271,3 +286,6 @@
   outline-offset: 3px;
   border-radius: 6px;
 }
+
+/* Hero tagline fitted to the portrait width (container = portrait box) */
+.tagline-fit { font-size: 3.95cqw; }
