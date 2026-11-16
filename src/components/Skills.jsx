@@ -60,7 +60,7 @@ export default function Skills() {
   const fullEntry = entries.slice(4);        // 5th → full width
 
   return (
-    <section id="skills" className="py-24 md:py-32 relative bg-ground transition-colors duration-300">
+    <section id="skills" className="py-20 md:py-24 relative bg-ground transition-colors duration-300">
       {/* Subtle top edge */}
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-borderLight dark:via-borderDark to-transparent" />
 
@@ -115,8 +115,6 @@ export default function Skills() {
 
       </div>
 
-      {/* Subtle bottom edge */}
-      <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-borderLight dark:via-borderDark to-transparent" />
     </section>
   );
 }

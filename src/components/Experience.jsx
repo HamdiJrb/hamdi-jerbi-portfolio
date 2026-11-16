@@ -6,7 +6,8 @@ export default function Experience() {
   const { experience } = portfolioData;
 
   return (
-    <section id="experience" className="relative py-28 px-6 md:px-12 lg:px-24 overflow-hidden bg-ground transition-colors duration-300">
+    <section id="experience" className="relative py-20 md:py-24 px-6 md:px-12 lg:px-24 overflow-hidden bg-ground transition-colors duration-300">
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-borderLight dark:via-borderDark to-transparent" />
       {/* Subtle background texture */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/[0.02] to-transparent pointer-events-none" />
 

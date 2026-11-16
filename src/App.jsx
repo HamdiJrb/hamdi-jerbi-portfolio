@@ -3,6 +3,7 @@ import { ThemeProvider } from './context/ThemeContext';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import About from './components/About';
+import AiDirection from './components/AiDirection';
 import Skills from './components/Skills';
 import Experience from './components/Experience';
 import Work from './components/Work';
@@ -31,6 +32,7 @@ export default function App() {
         <main className="flex-grow">
           <Home />
           <Work onSelectProject={handleOpenModal} />
+          <AiDirection />
           <Skills />
           <Experience />
           <About />

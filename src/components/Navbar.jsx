@@ -7,6 +7,7 @@ import { useScrollLock } from '../utils/scrollLock';
 const navLinks = [
   { name: 'Home', href: '#home' },
   { name: 'Work', href: '#work' },
+  { name: 'AI', href: '#ai' },
   { name: 'Skills', href: '#skills' },
   { name: 'Experience', href: '#experience' },
   { name: 'About', href: '#about' },
@@ -23,7 +24,7 @@ export default function Navbar() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 24);
 
-      const sections = ['home', 'work', 'skills', 'experience', 'about', 'contact'];
+      const sections = ['home', 'work', 'ai', 'skills', 'experience', 'about', 'contact'];
       const offset = window.scrollY + 140;
 
       for (const id of sections) {

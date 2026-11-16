@@ -15,7 +15,8 @@ export default function About() {
   const { personal, summary, stats } = portfolioData;
 
   return (
-    <section id="about" className="relative py-24 md:py-32 overflow-hidden bg-ground transition-colors duration-300">
+    <section id="about" className="relative py-20 md:py-24 overflow-hidden bg-ground transition-colors duration-300">
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-borderLight dark:via-borderDark to-transparent" />
       {/* Subtle background texture */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-primary/5 rounded-full blur-3xl" />

@@ -20,7 +20,7 @@ export default function Work({ onSelectProject }) {
   return (
     <section
       id="work"
-      className="py-24 md:py-32 relative bg-ground transition-colors duration-300"
+      className="py-20 md:py-24 relative bg-ground transition-colors duration-300"
     >
       {/* Subtle top rule */}
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-borderLight dark:via-borderDark to-transparent" />

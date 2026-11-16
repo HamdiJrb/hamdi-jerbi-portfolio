@@ -4,7 +4,8 @@ import { publicAsset } from '../utils/publicAsset';
 import { GithubIcon, LinkedinIcon, BehanceIcon, InstagramIcon } from './SocialIcons';
 import portfolioData from '../data/portfolio.json';
 
-// FormSubmit alias for h.jerbi78@gmail.com (keeps the address out of the request URL)
+// FormSubmit alias (keeps the address out of the request URL).
+// TODO: still the old Gmail alias; replace with the contact@hamdijerbi.me one once activated.
 const FORMSUBMIT_ID = 'e968e87284a37999bb8bdb58495053a0';
 
 export default function Contact() {
@@ -104,7 +105,8 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" className="relative py-24 md:py-32 overflow-hidden bg-ground transition-colors duration-300">
+    <section id="contact" className="relative py-20 md:py-24 overflow-hidden bg-ground transition-colors duration-300">
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-borderLight dark:via-borderDark to-transparent" />
       {/* Ambient amber orb — left-side accent */}
       <div
         aria-hidden="true"

@@ -140,7 +140,7 @@ The contact form is configured in `src/components/Contact.jsx`.
    ```javascript
    const formspreeEndpoint = 'https://formspree.io/f/YOUR_FORM_ID';
    ```
-4. Submissions will now be emailed directly to your inbox (`h.jerbi78@gmail.com`).
+4. Submissions will now be emailed directly to your inbox (`contact@hamdijerbi.me`).
 
 ---
 

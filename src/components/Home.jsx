@@ -1,6 +1,6 @@
 import React from 'react';
 import { publicAsset } from '../utils/publicAsset';
-import { ArrowUpRight, FileText, Sparkles } from 'lucide-react';
+import { ArrowUpRight, FileText, Mail, Sparkles } from 'lucide-react';
 import portfolioData from '../data/portfolio.json';
 
 // The giant word behind the portrait. Change it here; its width is fitted in
@@ -94,8 +94,11 @@ export default function Home() {
             </div>
 
             {/* AI card, tilted on the left of the chest */}
-            <figure
-              className="hero-settle absolute left-[-13%] bottom-[23%] sm:left-[-3%] lg:left-[0%] lg:bottom-[19%] w-max rounded-xl sm:rounded-2xl p-2.5 sm:p-3.5 lg:p-4 bg-ground/70 backdrop-blur-md border border-fg/10 shadow-[0_12px_40px_-12px_rgb(0_0_0/0.45)]"
+            <a
+              href="#ai"
+              onClick={(e) => scrollToSection(e, 'ai')}
+              aria-label="How I work with AI"
+              className="hero-settle pointer-events-auto block absolute left-[-13%] bottom-[23%] sm:left-[-3%] lg:left-[0%] lg:bottom-[19%] w-max rounded-xl sm:rounded-2xl p-2.5 sm:p-3.5 lg:p-4 bg-ground/70 backdrop-blur-md border border-fg/10 hover:border-sage/50 transition-colors shadow-[0_12px_40px_-12px_rgb(0_0_0/0.45)]"
               style={{ ...delay(700), rotate: '-4deg', backfaceVisibility: 'hidden' }}
             >
               <span className="inline-flex items-center gap-1 sm:gap-1.5 rounded-full bg-sage/15 text-sage px-1.5 sm:px-2 py-0.5 text-[10px] sm:text-[13px] font-semibold mb-1.5 sm:mb-2.5">
@@ -105,7 +108,7 @@ export default function Home() {
               <blockquote className="font-heading font-medium text-fg text-[11px] sm:text-[15px] leading-snug tracking-tight whitespace-nowrap">
                 But I'm still the art director.
               </blockquote>
-            </figure>
+            </a>
           </div>
           {/* Fade the bottom edge into the page */}
           <div className="absolute inset-x-0 bottom-0 h-28 lg:h-28 bg-gradient-to-t from-ground via-ground/70 to-transparent" />
@@ -124,10 +127,10 @@ export default function Home() {
         </div>
 
         {/* ── Foreground text (desktop: over the portrait's sides) ── */}
-        <div className="relative z-20 lg:mt-auto lg:pb-12 grid grid-cols-1 lg:grid-cols-[minmax(0,24rem)_1fr_minmax(0,17rem)] items-end gap-10 lg:gap-6 -mt-10 lg:mt-0">
+        <div className="relative z-20 pointer-events-none lg:mt-auto lg:pb-12 grid grid-cols-1 lg:grid-cols-[minmax(0,24rem)_1fr_minmax(0,17rem)] items-end gap-10 lg:gap-6 -mt-10 lg:mt-0">
 
           {/* Left: name & intro */}
-          <div className="flex flex-col items-start">
+          <div className="pointer-events-auto flex flex-col items-start">
             <p className="hero-settle text-lg sm:text-xl font-medium text-fg/80 mb-2" style={delay(260)}>
               Hello, I&apos;m
             </p>
@@ -165,10 +168,17 @@ export default function Home() {
             </div>
 
             <div className={`hero-settle mt-6 ${kicker} text-muted flex flex-wrap items-center gap-x-6 gap-y-2`} style={delay(520)}>
-              <span className="inline-flex items-center gap-2 text-fg">
+              {/* <span className="inline-flex items-center gap-2 text-fg">
                 <Spark className="w-3 h-3 text-sage" />
                 Available for freelance
-              </span>
+              </span> */}
+              <a
+                href={`mailto:${personal.email}`}
+                className="inline-flex items-center gap-2 normal-case tracking-normal text-[14px] font-medium text-fg hover:text-primary transition-colors"
+              >
+                <Mail className="w-3.5 h-3.5 text-sage" />
+                {personal.email}
+              </a>
             </div>
           </div>
 
@@ -176,7 +186,7 @@ export default function Home() {
           <div className="hidden lg:block" />
 
           {/* Right: stats */}
-          <div className="hero-settle flex flex-col lg:mb-16" style={delay(400)}>
+          <div className="hero-settle pointer-events-auto flex flex-col lg:mb-16" style={delay(400)}>
             {statList('grid grid-cols-2 gap-x-6 lg:block border-t border-line lg:border-t-0')}
           </div>
         </div>
